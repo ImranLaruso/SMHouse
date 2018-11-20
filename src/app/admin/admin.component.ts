@@ -8,11 +8,21 @@ import { RouterModule, Routes } from '@angular/router';
 })
   
 export class AdminComponent implements OnInit {
-
+  localUrl: any[];
   constructor() { }
 
   ngOnInit() {
   }
+
+  showPreviewImage(event: any) {
+    if (event.target.files && event.target.files[0]) {
+        var reader = new FileReader();
+        reader.onload = (event: any) => {
+            this.localUrl = event.target.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+}
    
 }
 
