@@ -1,14 +1,13 @@
 <div class="split left">
   <div class="centered">
    <h1><br>Organisation<br>name</h1>
-      
       <!-- <img src="assets/img/pro-pic.jpg" width="200" height="200"> -->
       <div>
         <h3 style = "color:rgb(183, 183, 248)">change your picture</h3>
       <div id="fileInput">
-          <label for="FileID"><img src="assets/img/pro-pic.jpg" width="200" height="200"></label>
-          <input type="file" id="FileID"/>
-          
+          <input type="file" (change)="showPreviewImage($event)" id="FileID"/>
+          <img [src]="'assets/img/pro-pic.jpg'" *ngIf="!localUrl" width="200" height="200">
+          <label for="FileID"><img [src]="localUrl" *ngIf="localUrl" width="200" height="200"></label>    
       </div>
   </div>
   <p>Admin ID <br>
