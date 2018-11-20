@@ -1,0 +1,123 @@
+
+/* Split the screen in half */
+.split {
+   
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 30px;
+  }
+  
+  
+  /* Control the left side */
+  .left {
+    left: 55px;
+    top:30px;
+    bottom:30px;
+    width: 20%;
+    padding-top:550px;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #53389b;
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 55px;
+    top:30px;
+    bottom:30px;
+    width: 70%;
+    height: 100%;
+    overflow-y: scroll;
+    background-color:#53389b;
+  }
+  
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  p{
+    font-size: 25px;
+    font-family: Trebuchet MS;
+    color: rgb(167, 228, 243);
+  }
+
+  h1 {
+   color: rgb(89, 241, 75);
+   font-family: Georgia italic;
+   font-style: italic;
+  }
+  h3 {
+   color: rgb(241, 163, 163);
+  }
+
+  img {
+  
+    border-radius: 50%;
+  }
+  input {
+    font-size: 10px;
+    height:20px;
+  }
+  .imagediv {
+    float:left;
+      margin-top:50px;
+  }
+  .imagediv .showonhover {
+    background:red;
+    padding:20px;
+    opacity:0.9;
+    color:white;
+    width: 100%;
+    display:block;	
+    text-align:center;
+    cursor:pointer;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 120px 120px 120px;
+    background-color: #53389b;
+    padding: 20px 10px;
+    border-radius: 10px;
+    grid-gap: 20px;
+  }
+  .item {
+    background-color: #53389b;
+    /* border: 1px solid #fff; */
+    padding: 30px 10px;
+    font-size: 30px;
+    /* text-align: center; */
+  }
+  
+  nav :visited, nav :link {
+      color: rgb(9, 35, 48);
+  }
+  nav :hover{
+      color: #039be5;
+      background-color: #CFD8DC;
+  }
+  nav.active {
+      color: #039be5;
+     
+  }
+  nav a {
+    padding:20px 20px;
+    margin: 20px 40px;
+    font-size: 30px;
+    border-style: solid;
+    border-color: rgb(79, 48, 114);
+    font-family: Trebuchet MS;
+    text-decoration: none;
+    display: inline block;
+    background-color:rgb(109, 199, 235);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
