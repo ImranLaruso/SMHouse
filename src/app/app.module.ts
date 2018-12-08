@@ -12,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { PaymentsComponent } from './payments/payments.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoginComponent } from './login/login.component';
     AboutComponent,
     FeedbackComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    PaymentsComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,7 @@ import { LoginComponent } from './login/login.component';
       { path: 'contact', component: ContactComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: LoginComponent },
+      { path: 'payments', component: PaymentsComponent },
 
     ])
   ],
