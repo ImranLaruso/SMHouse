@@ -1,6 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { MdComponentsModule } from './md-components.module';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
@@ -13,6 +20,9 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { PaymentsComponent } from './payments/payments.component';
+import { environment } from 'src/environments/environment';
+import { FeedbackService } from './feedback.service';
+import { ContactService } from './contact.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +40,8 @@ import { PaymentsComponent } from './payments/payments.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
@@ -39,10 +51,18 @@ import { PaymentsComponent } from './payments/payments.component';
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: LoginComponent },
       { path: 'payments', component: PaymentsComponent },
-
-    ])
+    ]),
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase, 'smhouse-feedbacks'),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    MdComponentsModule
+    
   ],
-  providers: [],
+  providers: [
+    FeedbackService,
+    ContactService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

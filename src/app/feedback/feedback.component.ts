@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { FeedbackService } from '../feedback.service';
 
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.component.html',
   styleUrls: ['./feedback.component.css']
 })
-export class FeedbackComponent implements OnInit {
+export class FeedbackComponent{
 
-  constructor() { }
+  constructor(private feedbackService: FeedbackService){}
 
-  ngOnInit() {
+  // Get these values from the server
+  countries = [
+    { name: 'Sri Lanka' },
+    { name: 'India' },
+    { name: 'America' },
+    { name: 'China' },
+  ];
+
+  submit(feedback){
+    this.feedbackService.create(feedback);
   }
 
 }
